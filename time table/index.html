@@ -17,58 +17,68 @@
       <div id="table-container">
         <h1>STUDENT TIME TABLE</h1>
         <table>
-          <tr>
-            <td id="first-column">TIME/DAY</td>
-            <th>07.00-09.00</th>
-            <th>09.00-11.00</th>
-            <th>11.00-13.00</th>
-            <th>13.00-15.00</th>
-            <th>15.00-17.00</th>
-          </tr>
-          <tr>
+          <thead>
             <tr>
-              <td id="first-column">MONDAY</td>
+              <th scope="col" class="first-column">TIME/DAY</th>
+              <th scope="col">07:00-09:00</th>
+              <th scope="col">09:00-11:00</th>
+              <th scope="col">11:00-13:00</th>
+              <th scope="col">13:00-15:00</th>
+              <th scope="col">15:00-17:00</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" class="first-column">MONDAY</th>
               <td>-</td>
-              <td>CS 320</td>
+              <td class="course-code">CS 320</td>
               <td>-</td>
-              <td>CS 345</td>
+              <td class="course-code">CS 345</td>
               <td>-</td>
             </tr>
             <tr>
-              <td id="first-column">TUESDAY</td>
-              <td>MA 320</td>
+              <th scope="row" class="first-column">TUESDAY</th>
+              <td class="course-code">MA 320</td>
               <td>-</td>
               <td>-</td>
               <td>-</td>
               <td>-</td>
             </tr>
             <tr>
-              <td id="first-column">WEDNESDAY</td>
-              <td>MA 320</td>
-              <td>CS 320</td>
+              <th scope="row" class="first-column">WEDNESDAY</th>
+              <td class="course-code">MA 320</td>
+              <td class="course-code">CS 320</td>
               <td>-</td>
-              <td>CS 351</td>
+              <td class="course-code">CS 351</td>
               <td>-</td>
             </tr>
             <tr>
-              <td id="first-column">THURSDAY</td>
+              <th scope="row" class="first-column">THURSDAY</th>
               <td>-</td>
               <td>-</td>
-              <td>CS 350</td>
+              <td class="course-code">CS 350</td>
               <td>-</td>
-              <td>CS 361</td>
+              <td class="course-code">CS 361</td>
             </tr>
             <tr>
-              <td id="first-column">FRIDAY</td>
+              <th scope="row" class="first-column">FRIDAY</th>
               <td>-</td>
               <td>-</td>
-              <td>CS 301</td>
+              <td class="course-code">CS 301</td>
               <td>-</td>
               <td>-</td>
             </tr>
-        </tr>
+          </tbody>
         </table>
       </div>
     </div>
+
+    <script>
+      document.querySelectorAll(".course-code").forEach((cell) => {
+        cell.addEventListener("mouseenter", function (e) {
+          this.style.cursor = "pointer";
+        });
+      });
+    </script>
   </body>
 </html>
